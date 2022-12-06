@@ -23,6 +23,7 @@ export default {
         let signUp = async () => {
             try {
                 let res = await auth.createUserWithEmailAndPassword(email.value, password.value);
+                res.user.updateProfile({ displayName: displayName.value });
                 if (!res) {
                     throw new Error("could not create new user")
                 }

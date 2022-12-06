@@ -1,14 +1,14 @@
 body {
-  background: #2b2d42;
-  color: #444;
+  background: #264653;
+  color: #000;
 }
 .container {
   width: 90%;
   max-width: 960px;
   margin: 80px auto;
   border-radius: 20px;
-  box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.294);
-  background: #edf2f4;
+  /* box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.294); */
+  background: #fefae0;
 }
 .error {
   color: #d90429;
@@ -16,7 +16,7 @@ body {
 }
 button {
   text-decoration: none;
-  background: #5ae4ca;
+  background: #1d1d1d;
   color: white;
   font-weight: bold;
   border: 0;

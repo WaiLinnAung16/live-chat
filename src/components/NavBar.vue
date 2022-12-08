@@ -1,31 +1,27 @@
 <template>
     <nav>
         <div>
-            <p>Hi display name</p>
-            <p class="email">Log in as email</p>
+            <p>Hi {{ user.displayName }}</p>
+            <p class="email">Logged in as {{ user.email }}</p>
         </div>
         <button @click="logout">Logout</button>
     </nav>
 </template>
 
 <script>
-import { ref } from 'vue';
-import { auth } from '../../firebase/config';
 
+import useLogout from '../composables/useLogout';
+import getUser from '../composables/getUser'
+import { useRouter } from 'vue-router';
 export default {
     setup() {
-        let error = ref(null)
+        let { error, log_out } = useLogout();
+        let { user } = getUser();
         let logout = async () => {
-            try {
-                await auth.signOut();
-                console.log("Sign Out");
-            } catch (err) {
-                error.value = err.message
-                console.log(error.value)
-            }
-
+            await log_out();
+            useRouter().push("/")
         }
-        return { logout }
+        return { logout, error, user }
     }
 }
 </script>

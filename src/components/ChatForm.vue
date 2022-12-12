@@ -1,6 +1,6 @@
 <template>
     <form>
-        <textarea placeholder="text message and hit enter to send" @keypress.enter="sendMsg"
+        <textarea rows="3" placeholder="text message and hit enter to send" @keypress.enter="sendMsg"
             v-model="message"></textarea>
     </form>
 </template>
@@ -32,17 +32,15 @@ export default {
 
 <style >
 form {
-    margin: 10px;
+    height: 100%;
 }
 
 textarea {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 6px;
     padding: 10px;
     box-sizing: border-box;
     border: 0;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 0 0 20px 20px;
     font-family: inherit;
     outline: none;
